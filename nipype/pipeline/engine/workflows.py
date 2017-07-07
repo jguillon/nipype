@@ -701,6 +701,7 @@ connected.
                     raise IOError('Duplicate node name %s found.' % node.name)
             else:
                 node_names.append(node.name)
+                node_lineage.append(node._hierarchy)
 
     def _has_attr(self, parameter, subtype='in'):
         """Checks if a parameter is available as an input or output
