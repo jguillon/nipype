@@ -154,31 +154,31 @@ class RealignUnwarpInputSpec(SPMCommandInputSpec):
         field='eoptions.wrap',
         desc='Check if interpolation should wrap in [x,y,z]')
     # Unwarp Options
-    basfcn = traits.List(traits.Int(), minlen=2, maxlen=2,
+    basis_fcn = traits.List(traits.Int(), minlen=2, maxlen=2,
         field='uweoptions.basfcn',
         desc='basic functions')
-    regorder = traits.Range(low=0, high=3,
+    reg_order = traits.Range(low=0, high=3,
         field='uweoptions.regorder',
         desc='regularization')
-    regfactor = traits.Range(low=0,
+    reg_factor = traits.Range(low=0,
         field='uweoptions.lambda',
         desc='regularization factor')
-    jm = traits.Bool(
+    jacobian_deform = traits.Bool(
         field='uweoptions.jm',
         desc='Jacobian deformations')
-    fot = traits.List(traits.Int(), minlen=2, maxlen=2,
+    first_order = traits.List(traits.Int(), minlen=2, maxlen=2,
         field='uweoptions.fot',
         desc='first-order effects')
-    sot = traits.List(traits.Int(), minlen=2, maxlen=2,
+    second_order = traits.List(traits.Int(), minlen=2, maxlen=2,
         field='uweoptions.sot',
         desc='second-order effects')
-    uwfwhm = traits.Range(low=0,
+    unwarp_fwhm = traits.Range(low=0,
         field='uweoptions.uwfwhm',
         desc='smoothing for unwarp')
-    rem = traits.Bool(
+    estim_mov = traits.Bool(
         field='uweoptions.rem',
-        desc='')
-    noi = traits.Range(low=0,
+        desc='re-estimate movement params')
+    n_iterations = traits.Range(low=0,
         field='uweoptions.noi',
         desc='maximum number of iterations')
     expround = traits.Enum('Average', 'First', 'Last',
@@ -224,7 +224,7 @@ class RealignUnwarpOutputSpec(TraitedSpec):
 class RealignUnwarp(SPMCommand):
     """Use spm_realign for estimating within modality rigid body alignment
 
-    http://www.fil.ion.ucl.ac.uk/spm/doc/manual.pdf#page=25
+    http://www.fil.ion.ucl.ac.uk/spm/doc/manual.pdf#page=31
 
     Examples
     --------
