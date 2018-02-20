@@ -14,6 +14,11 @@ def test_RealignUnwarp_inputs():
             nohash=True,
             usedefault=True,
         ),
+        in_files=dict(
+            copyfile=True,
+            field='data.scans',
+            mandatory=True,
+        ),
         interp=dict(field='eoptions.interp', ),
         jm=dict(field='uweoptions.jm', ),
         matlab_cmd=dict(),
@@ -24,7 +29,7 @@ def test_RealignUnwarp_inputs():
             usedefault=True,
         ),
         paths=dict(),
-        pmscan=dict(
+        phase_map_file=dict(
             copyfile=False,
             field='data.pmscan',
             mandatory=True,
@@ -34,11 +39,6 @@ def test_RealignUnwarp_inputs():
         register_to_mean=dict(field='eoptions.rtm', ),
         regorder=dict(field='uweoptions.regorder', ),
         rem=dict(field='uweoptions.rem', ),
-        scans=dict(
-            copyfile=True,
-            field='data.scans',
-            mandatory=True,
-        ),
         separation=dict(field='eoptions.sep', ),
         sot=dict(field='uweoptions.sot', ),
         use_mcr=dict(),
