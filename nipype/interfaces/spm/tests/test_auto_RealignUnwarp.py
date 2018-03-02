@@ -5,9 +5,10 @@ from ..preprocess import RealignUnwarp
 
 def test_RealignUnwarp_inputs():
     input_map = dict(
-        basfcn=dict(field='uweoptions.basfcn', ),
+        basis_fcn=dict(field='uweoptions.basfcn', ),
+        estim_mov=dict(field='uweoptions.rem', ),
         expround=dict(field='uweoptions.expround', ),
-        fot=dict(field='uweoptions.fot', ),
+        first_order=dict(field='uweoptions.fot', ),
         fwhm=dict(field='eoptions.fwhm', ),
         ignore_exception=dict(
             deprecated='1.0.0',
@@ -20,10 +21,10 @@ def test_RealignUnwarp_inputs():
             mandatory=True,
         ),
         interp=dict(field='eoptions.interp', ),
-        jm=dict(field='uweoptions.jm', ),
+        jacobian_deform=dict(field='uweoptions.jm', ),
         matlab_cmd=dict(),
         mfile=dict(usedefault=True, ),
-        noi=dict(field='uweoptions.noi', ),
+        n_iterations=dict(field='uweoptions.noi', ),
         out_prefix=dict(
             field='uwroptions.prefix',
             usedefault=True,
@@ -35,18 +36,17 @@ def test_RealignUnwarp_inputs():
             mandatory=True,
         ),
         quality=dict(field='eoptions.quality', ),
-        regfactor=dict(field='uweoptions.lambda', ),
+        reg_factor=dict(field='uweoptions.lambda', ),
+        reg_order=dict(field='uweoptions.regorder', ),
         register_to_mean=dict(field='eoptions.rtm', ),
-        regorder=dict(field='uweoptions.regorder', ),
-        rem=dict(field='uweoptions.rem', ),
+        second_order=dict(field='uweoptions.sot', ),
         separation=dict(field='eoptions.sep', ),
-        sot=dict(field='uweoptions.sot', ),
+        unwarp_fwhm=dict(field='uweoptions.uwfwhm', ),
         use_mcr=dict(),
         use_v8struct=dict(
             min_ver='8',
             usedefault=True,
         ),
-        uwfwhm=dict(field='uweoptions.uwfwhm', ),
         weight_img=dict(field='eoptions.weight', ),
         wrap=dict(field='eoptions.wrap', ),
         write_interp=dict(field='uwroptions.rinterp', ),
